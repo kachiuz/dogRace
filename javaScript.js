@@ -1,5 +1,11 @@
 $(document).ready(function(){
 	
+	//call this function after first dog reaches the finish line
+	function winner(winnerName)
+	{
+		alert(winnerName+" is the winner!");
+	}
+	
 	//press start button for the timer and controls to appear
     $("#startButton").click(function(){
 		
@@ -14,7 +20,6 @@ $(document).ready(function(){
 			$("#controls").removeClass("hidden");			
 			}, 4000);
     });
-	
 	
 	//first player button controls
     $("#playerButton1").click(function(){
@@ -35,11 +40,21 @@ $(document).ready(function(){
 		var singleClickMove = Number(chaseLaneLengthNumber)/100; 
 		//add 1% of chaseLane width to dog margin-left value
 		dog1CurrentPositionNumber += singleClickMove;
-		
-		//apply the changes to make the dog race
-		$("#dog1").css("margin-left", dog1CurrentPositionNumber);
+				
+		//check if it crossed the finish line
+		//since dog picture is 10% width, we need to add chaseLaneLengthNumber*0.1
+		//since finish line is 10px width an has two 1px borders, wee need to deduct that for the race to finish at the line
+		if ((dog1CurrentPositionNumber+chaseLaneLengthNumber*0.1)>=chaseLaneLengthNumber-12)
+		{
+			var winnerName = "Bora";
+			winner(winnerName);
+		}
+		//if not
+		else{
+			//apply the changes to make the dog race
+			$("#dog1").css("margin-left", dog1CurrentPositionNumber);
+		}
     });
-	
 	
 	//second player button controls
     $("#playerButton2").click(function(){
@@ -61,7 +76,18 @@ $(document).ready(function(){
 		//add 1% of chaseLane width to dog margin-left value
 		dog2CurrentPositionNumber += singleClickMove;
 		
-		//apply the changes to make the dog race
-		$("#dog2").css("margin-left", dog2CurrentPositionNumber);
+		//check if it crossed the finish line
+		//since dog picture is 10% width, we need to add chaseLaneLengthNumber*0.1
+		//since finish line is 10px width an has two 1px borders, wee need to deduct that for the race to finish at the line
+		if ((dog2CurrentPositionNumber+chaseLaneLengthNumber*0.1)>=chaseLaneLengthNumber-12)
+		{
+			var winnerName = "Barneta";
+			winner(winnerName);
+		}
+		//if not
+		else{
+			//apply the changes to make the dog race
+			$("#dog2").css("margin-left", dog2CurrentPositionNumber);
+		}
     });
 });
