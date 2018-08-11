@@ -10,6 +10,45 @@
 	padding: 0px;
 	margin: 0px;
 }
+
+/*additional bootsrtap for controls*/
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+	border-right: 2px solid white;
+	border-left: 2px solid white;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}
 /*bootstrap End*/
 
 .dog
@@ -53,7 +92,7 @@
 {
 	margin-top: 2px;
 }
-.startButton
+.startButton, #additionalControls
 {
 	margin: auto;
 	width: 100%;
@@ -64,6 +103,26 @@
 	font-size: 30px;
 	text-align: center;
 }
+#additionalControls
+{
+	background-color: white;
+}
+
+.addControlsButton, .empty
+{
+	background-color: #2eb82e;
+	height: 50px;
+	font-size: 30px;
+}
+.empty
+{
+	background-color: white;
+}
+#jumpDog1Fake, #delayDog1Fake, #jumpDog2Fake, #delayDog2Fake
+{
+	background-color: #9fff80;
+}
+
 
 .relative
 {
@@ -95,4 +154,17 @@
 	position: absolute;
 	right: 0px;
 	top: 0px;
+}
+#countDown
+{
+	position: absolute;
+	left: 40%;
+	top: 0px;
+	width: 20%;
+	height: 75px;
+	color: red;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+	line-height: 75px;
 }
